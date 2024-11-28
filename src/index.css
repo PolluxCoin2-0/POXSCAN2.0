@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Reusable Box Style */
+.reusable-box {
+    @apply rounded-[23px] backdrop-blur-[37.99493408203125px] h-24 w-48;
+    background: linear-gradient(90deg, #124202 0%, #000000 100%);
+}
+
+.spotlight {
+    height:1000px;
+    width: 1500px;
+    background-image: radial-gradient(closest-side, rgba(47, 176, 3, 0.21), transparent);
+    position: absolute;
+    top: -450px;
+    left: 90px;
+}
+  
+  
+
