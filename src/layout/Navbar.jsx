@@ -184,7 +184,7 @@ const Navbar = () => {
   </button>
   {isMobileMenuOpen && (
     <div
-      className="flex flex-col space-y-4 p-6 bg-[#73E74D] bg-opacity-5 text-white fixed top-16 left-0 bottom-0 w-64 transform transition-transform duration-300 ease-in-out"
+      className="flex flex-col space-y-4 p-6 bg-black text-white fixed top-16 left-0 bottom-0 w-64 transform transition-transform duration-300 ease-in-out"
       style={{ transform: isMobileMenuOpen ? 'translateX(0)' : 'translateX(-100%)' }}
     >
       <MobileNavLink
