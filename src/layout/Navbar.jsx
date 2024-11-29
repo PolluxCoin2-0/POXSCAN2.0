@@ -48,7 +48,7 @@ const Navbar = () => {
   return (
     <div className="relative bg-black text-white">
       {/* Spotlight effect */}
-      {/* <div className="spotlight"></div> */}
+      <div className="spotlight"></div>
       {/* For Desktop */}
       <div className=" hidden w-full lg:flex items-center justify-between py-4">
         <div className="flex items-center justify-around w-[60%]">

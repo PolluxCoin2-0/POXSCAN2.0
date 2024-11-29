@@ -16,13 +16,36 @@ body {
 }
 
 .spotlight {
-    height:1000px;
-    width: 1500px;
+    height: 60vh; /* 60% of viewport height */
+    width: 80vw; /* 80% of viewport width */
     background-image: radial-gradient(closest-side, rgba(47, 176, 3, 0.21), transparent);
     position: absolute;
-    top: -450px;
-    left: 90px;
+    top: -30vh; /* Move up relative to viewport height */
+    left: 5vw; /* Adjust relative to viewport width */
+    z-index: 0;
+    pointer-events: none;
 }
+
+/* Adjust the size and position for smaller screens */
+@media screen and (max-width: 768px) {
+    .spotlight {
+        height: 50vh;
+        width: 90vw;
+        top: -25vh;
+        left: 2vw;
+    }
+}
+
+/* Adjust for very small screens (mobile) */
+@media screen and (max-width: 480px) {
+    .spotlight {
+        height: 60vh;
+        width: 100vw;
+        top: -20vh;
+        left: 0;
+    }
+}
+
   
   
 
