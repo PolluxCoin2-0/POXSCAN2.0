@@ -1,6 +1,6 @@
 import { useState } from "react";
 import CompanyLogo from "../assets/NavLogo.svg";
-import WhitePoxLogo from "../assets/WhitePoxLogo.svg";
+import WhitePoxLogo from "../assets/whitePoxLogo.svg";
 import { MobileNavLink } from "./MobileNavLink";
 
 const Navbar = () => {
@@ -48,7 +48,7 @@ const Navbar = () => {
   return (
     <div className="relative bg-black text-white">
       {/* Spotlight effect */}
-      <div className="spotlight"></div>
+      {/* <div className="spotlight"></div> */}
       {/* For Desktop */}
       <div className=" hidden w-full lg:flex items-center justify-between py-4">
         <div className="flex items-center justify-around w-[60%]">
@@ -113,7 +113,7 @@ const Navbar = () => {
           {/* Right Actions */}
           <div className="flex items-center lg:space-x-2 xl:space-x-4">
             {/* Connect Wallet Button */}
-            <button className="border-[#73E74D] border-[1px] hover:bg-[#1D2721] text-white py-2 px-4 rounded-3xl flex items-center space-x-2 transition-colors duration-200">
+            <button className="border-[#73E74D] border-[1px] cursor-pointer hover:bg-[#27211d] text-white py-2 px-4 rounded-3xl flex items-center space-x-2 transition-colors duration-200">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
