@@ -1,6 +1,6 @@
 import { useState } from "react";
 import CompanyLogo from "../assets/NavLogo.svg";
-import WhitePoxLogo from "../assets/whitePoxLogo.svg";
+import WhitePoxLogo from "../assets/whiteLogoPox.svg";
 import { MobileNavLink } from "./MobileNavLink";
 
 const Navbar = () => {
@@ -29,7 +29,7 @@ const Navbar = () => {
       {hasDropdown && (
         <div
           className="absolute left-0 top-6 hidden group-hover:flex flex-col bg-gray-600 bg-opacity-20 backdrop-blur-3xl text-white shadow-xl py-3
-         px-4 rounded-lg border border-white/10 mt-2 whitespace-nowrap"
+         px-4 rounded-lg border border-white/10 mt-2 whitespace-nowrap z-50"
         >
           {dropdownItems.map((item, idx) => (
             <a
@@ -51,7 +51,7 @@ const Navbar = () => {
       <div className="spotlight"></div>
       {/* For Desktop */}
       <div className=" hidden w-full lg:flex items-center justify-between py-4">
-        <div className="flex items-center justify-around w-[60%]">
+        <div className="flex items-center justify-around space-x-12">
           {/* Company Logo */}
           <img
             src={CompanyLogo}
