@@ -188,9 +188,9 @@ const Home = () => {
 
   {/* Table Header */}
   <div className="flex flex-row items-center justify-between  bg-[#434343] py-2 px-2 rounded-xl mb-4">
-    <p className="text-sm font-semibold text-gray-400">Project Name</p>
-    <p className="text-sm font-semibold text-gray-400">Accounts</p>
-    <p className="text-sm font-semibold text-gray-400">Transactions</p>
+    <p className="text-sm font-semibold text-gray-100">Project Name</p>
+    <p className="text-sm font-semibold text-gray-100">Accounts</p>
+    <p className="text-sm font-semibold text-gray-100">Transactions</p>
   </div>
 
   {/* Tokens Data */}
