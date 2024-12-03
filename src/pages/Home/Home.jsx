@@ -82,14 +82,14 @@ const Home = () => {
         </p>
 
         {/* Search Section */}
-        <div className="flex items-center space-x-4 w-[45%] mr-20 mt-2">
-          <div className="bg-[#151515] border-[1px] border-[#434343] rounded-full w-auto px-6 py-2">
-            <p className="text-[#FFFFFF] opacity-70 whitespace-nowrap">
-              Total Block
-            </p>
-            <p className="font-medium text-center">2.23B</p>
-          </div>
-          <Search />
+        <div className="flex flex-col md:flex-row items-center md:space-x-4 w-full md:w-[45%] mr-0 md:mr-20 mt-2 space-y-4 md:space-y-0">
+  <div className="bg-[#151515] border-[1px] border-[#434343] rounded-full w-full md:w-auto px-6 py-2 flex flex-col items-center">
+    <p className="text-[#FFFFFF] opacity-70 whitespace-nowrap text-center">
+      Total Block
+    </p>
+    <p className="font-medium text-center">2.23B</p>
+  </div>
+  <Search />
         </div>
 
         {/* Trending Search Section */}
@@ -301,7 +301,7 @@ const Home = () => {
       </div>
 
       {/* Transactions */}
-      <div className="overflow-x-auto">
+      <div className="overflow-x-auto pb-6">
       <Transaction />
       </div>
     </div>
