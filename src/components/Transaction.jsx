@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import AnimatedCube from "../components/AnimatedCube";
 
 const Transaction = () => {
@@ -147,9 +148,9 @@ const Transaction = () => {
               <AnimatedCube />
               <p>{txn.block}</p>
             </div>
-            <p className="truncate text-center text-[#B3B3B3] cursor-pointer">
+            <Link to="/transactiondetails" className="truncate text-center text-[#B3B3B3] cursor-pointer">
               {`${txn.hash.slice(0, 10)}...${txn.hash.slice(-10)}`}
-            </p>
+            </Link>
             <p className="text-center text-white text-opacity-70">{txn.time}</p>
             <p className="text-center">{txn.type}</p>
             <p className="truncate text-center">{txn.from}</p>

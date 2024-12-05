@@ -1,13 +1,13 @@
 const Search = () => {
   return (
-    <div className="flex flex-row justify-start items-center w-full space-x-4 bg-[#151515] border-[1px] border-[#434343] rounded-full px-6 py-4">
+    <div className="flex flex-row justify-start items-center w-full space-x-2 md:space-x-4 bg-[#151515] border-[1px] border-[#434343] rounded-full px-6 py-2 md:py-4">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="white"
-        className="size-8"
+        className="size-6 md:size-7"
       >
         <path
           strokeLinecap="round"
@@ -17,7 +17,7 @@ const Search = () => {
       </svg>
       <input
         type="text"
-        className="bg-transparent outline-none w-full placeholder:text-white placeholder:opacity-70"
+        className="text-white bg-transparent outline-none w-full placeholder:text-white placeholder:opacity-70 placeholder:text-xs md:placeholder:text-base"
         placeholder="Search by token / Account / Contract / Pox Hash / Block"
       />
     </div>
