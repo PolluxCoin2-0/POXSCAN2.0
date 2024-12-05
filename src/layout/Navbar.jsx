@@ -66,12 +66,12 @@ const Navbar = () => {
               href="#"
               hasDropdown={true}
               dropdownItems={[
-                { href: "#", label: "Node" },
-                { href: "#", label: "Blocks" },
-                { href: "#", label: "Transactions" },
-                { href: "#", label: "Transfers" },
-                { href: "#", label: "Accounts" },
-                { href: "#", label: "Contracts" },
+                { href: "/blockchain/node", label: "Node" },
+                { href: "/blockchain/blocks", label: "Blocks" },
+                { href: "/blockchain/transactions", label: "Transactions" },
+                { href: "/blockchain/transfers", label: "Transfers" },
+                { href: "/blockchain/accounts", label: "Accounts" },
+                { href: "/blockchain/contracts", label: "Contracts" },
               ]}
             />
             <NavLink href="#" label="Tokens" />
@@ -203,12 +203,12 @@ const Navbar = () => {
         label="Blockchain"
         hasDropdown={true}
         dropdownItems={[
-          { href: "#", label: "Node" },
-          { href: "#", label: "Blocks" },
-          { href: "#", label: "Transactions" },
-          { href: "#", label: "Transfers" },
-          { href: "#", label: "Accounts" },
-          { href: "#", label: "Contracts" },
+          { href: "/blockchain/node", label: "Node" },
+          { href: "/blockchain/blocks", label: "Blocks" },
+          { href: "/blockchain/transactions", label: "Transactions" },
+          { href: "/blockchain/transfers", label: "Transfers" },
+          { href: "/blockchain/accounts", label: "Accounts" },
+          { href: "/blockchain/contracts", label: "Contracts" },
         ]}
         index={0}
         isDropdownOpen={openDropdownIndex === 0} 
