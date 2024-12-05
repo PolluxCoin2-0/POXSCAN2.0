@@ -1,6 +1,6 @@
 const Search = () => {
   return (
-    <div className="flex flex-row justify-start items-center w-full space-x-2 md:space-x-4 bg-[#151515] border-[1px] border-[#434343] rounded-full px-6 py-2 md:py-4">
+    <div className="flex flex-row justify-start items-center w-full space-x-2 md:space-x-4 bg-[#151515] border-[1px] border-[#434343] rounded-full px-6 py-4">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
