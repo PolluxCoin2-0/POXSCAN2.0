@@ -14,7 +14,7 @@ const Navbar = () => {
   const toggleDropdown = (index) => {
     setOpenDropdownIndex((prevIndex) => (prevIndex === index ? null : index));
   };
-
+  
   const NavLink = ({ href, label, hasDropdown, dropdownItems }) => (
     <div className="relative group">
       {/* Main Link */}
@@ -184,9 +184,21 @@ const Navbar = () => {
   </button>
   {isMobileMenuOpen && (
     <div
-      className="flex flex-col space-y-4 p-6 bg-black text-white fixed top-16 left-0 bottom-0 w-64 transform transition-transform duration-300 ease-in-out z-50"
+      className="flex flex-col space-y-4 p-6 bg-black text-white fixed top-0 left-0 bottom-0 w-full transform transition-transform duration-300 ease-in-out z-50"
       style={{ transform: isMobileMenuOpen ? 'translateX(0)' : 'translateX(-100%)' }}
     >
+      <div className="flex flex-row justify-between items-center">
+      <img
+    src={CompanyLogo}
+    alt="Company Logo"
+    className="h-8 w-auto cursor-pointer"
+  />
+<svg onClick={toggleMobileMenu} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#73E74D" className="size-6">
+  <path strokeLinecap="round" strokeLinejoin="round" d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+</svg>
+
+      </div>
+
       <MobileNavLink
         label="Blockchain"
         hasDropdown={true}
