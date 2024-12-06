@@ -19,7 +19,7 @@ const Blocks = () => {
     <div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-6 mt-10 mb-6">
             <div className="reusable-box px-6 py-4 ">
              <p className="text-white text-opacity-50 font-medium text-sm pb-3">Number of Blocks</p>
-             <div className="flex flex-row items-center justify-between px-2">
+             <div className="flex flex-row items-center justify-between">
               <div className="flex flex-row items-center space-x-4">
                 <img src={NumberOfBlocksImg} alt="number-of-blocks-img" />
                 <div className="">
@@ -36,7 +36,7 @@ const Blocks = () => {
 
             <div className="reusable-box px-6 py-4 ">
              <p className="text-white text-opacity-50 font-medium text-sm pb-3">Blocks Reward</p>
-             <div className="flex flex-row items-center justify-between px-2">
+             <div className="flex flex-row items-center justify-between">
               <div className="flex flex-row items-center space-x-4">
                 <img src={BlocksrewardImg} alt="number-of-blocks-img" />
                 <div className="">
@@ -55,7 +55,7 @@ const Blocks = () => {
 
             <div className="reusable-box px-6 py-4 ">
              <p className="text-white text-opacity-50 font-medium text-sm pb-3">Stats on Burned POX</p>
-             <div className="flex flex-row items-center justify-between px-2">
+             <div className="flex flex-row items-center justify-between">
               <div className="flex flex-row items-center space-x-4">
                 <img src={StatsOnBurnedPOXImg} alt="number-of-blocks-img" />
                 <div className="">
@@ -75,6 +75,27 @@ const Blocks = () => {
 
     {/* Tranasctions */}
     <div className="overflow-x-auto pb-6">
+       {/* Header Section */}
+    <div className="flex flex-row items-center justify-start space-x-5 px-0 md:px-6 md:justify-between md:space-x-0 py-4 min-w-[600px]">
+      <h1 className="text-2xl font-bold text-white">Transactions</h1>
+      <div className="flex items-center gap-2 cursor-pointer hover:opacity-80 transition-opacity">
+        <span className="text-sm font-medium text-[#37DD00]">View More</span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth={1.5}
+          stroke="#37DD00"
+          className="w-5 h-5"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="m5.25 4.5 7.5 7.5-7.5 7.5m6-15 7.5 7.5-7.5 7.5"
+          />
+        </svg>
+      </div>
+    </div>
       <Transaction />
       </div>
       </div>

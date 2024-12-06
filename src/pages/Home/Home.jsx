@@ -302,6 +302,27 @@ const Home = () => {
 
       {/* Transactions */}
       <div className="overflow-x-auto pb-6">
+         {/* Header Section */}
+    <div className="flex flex-row items-center justify-start space-x-5 px-0 md:px-0 md:justify-between md:space-x-0 py-4 min-w-[600px]">
+      <h1 className="text-2xl font-bold text-white">Transactions</h1>
+      <div className="flex items-center gap-2 cursor-pointer hover:opacity-80 transition-opacity">
+        <span className="text-sm font-medium text-[#37DD00]">View More</span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth={1.5}
+          stroke="#37DD00"
+          className="w-5 h-5"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="m5.25 4.5 7.5 7.5-7.5 7.5m6-15 7.5 7.5-7.5 7.5"
+          />
+        </svg>
+      </div>
+    </div>
       <Transaction />
       </div>
     </div>
