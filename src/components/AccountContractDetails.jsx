@@ -39,6 +39,11 @@ const AccountContractDetails = () => {
           </div>
         </div>
       </div>
+
+      {/* uvi token contract */}
+      <div>
+        <p className="inline border-[1px] border-[#434343] rounded-xl py-2 px-2">Uvi Token Contract</p>
+      </div>
       </div>
   )
 }
