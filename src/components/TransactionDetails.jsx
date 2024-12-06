@@ -81,7 +81,7 @@ const TransactionDetails = () => {
         </div>
 
         <div className="bg-[#151515] border-[1px] border-[#434343] rounded-3xl px-6 py-5 my-3 shadow-lg">
-            <div className="flex flex-row items-center space-x-0 md:space-x-80 pb-4">
+            <div className="flex flex-row items-center space-x-0 md:space-x-80 pb-6">
           <div className="flex flex-row items-center space-x-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -187,7 +187,7 @@ const TransactionDetails = () => {
           </div>
         </div>
 
-        <div className="flex flex-row items-center space-x-24 md:space-x-80 pb-4">
+        <div className="flex flex-row items-center space-x-24 md:space-x-80 pb-6">
           <div className="flex flex-row items-center space-x-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -211,7 +211,7 @@ const TransactionDetails = () => {
               </p>
         </div>
 
-        <div className="flex flex-row items-center space-x-[100px] md:space-x-[325px] pb-4">
+        <div className="flex flex-row items-center space-x-[100px] md:space-x-[325px] pb-6">
           <div className="flex flex-row items-center space-x-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -235,7 +235,7 @@ const TransactionDetails = () => {
               </p>
         </div>
 
-        <div className="flex flex-col items-start md:flex-row md:items-center space-x-0 md:space-x-80 pb-4">
+        <div className="flex flex-col items-start md:flex-row md:items-center space-x-0 md:space-x-80 pb-6">
           <div className="flex flex-row items-center space-x-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -262,7 +262,7 @@ const TransactionDetails = () => {
               </div>
         </div>
 
-        <div className="flex flex-col items-start md:flex-row md:items-center space-x-0 md:space-x-[324px] pb-4">
+        <div className="flex flex-col items-start md:flex-row md:items-center space-x-0 md:space-x-[324px] pb-6">
           <div className="flex flex-row items-center space-x-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -381,7 +381,7 @@ const TransactionDetails = () => {
             {
                 changedOverViewEventComponent ? (
                     <div>
-                    <div className="flex flex-row items-center space-x-[120px] md:space-x-96 pb-4">
+                    <div className="flex flex-row items-center space-x-[120px] md:space-x-96 pb-6">
                       <div className="flex flex-row items-center space-x-2">
                         <p className="text-white font-medium">Value</p>
                         </div>
@@ -391,7 +391,7 @@ const TransactionDetails = () => {
                           </p>
                     </div>
             
-                    <div className="flex flex-row items-center space-x-16 md:space-x-[330px] pb-4">
+                    <div className="flex flex-row items-center space-x-16 md:space-x-[330px] pb-6">
                       <div className="flex flex-row items-center space-x-2">
                         <p className="text-white font-medium">POX Transfer </p>
                         </div>
@@ -401,7 +401,7 @@ const TransactionDetails = () => {
                           </p>
                     </div>
             
-                    <div className="flex flex-row items-center space-x-16 md:space-x-80 pb-4">
+                    <div className="flex flex-row items-center space-x-16 md:space-x-80 pb-6">
                       <div className="flex flex-row items-center space-x-2">
                         <p className="text-white font-medium">Method Calling</p>
                         </div>
@@ -411,7 +411,7 @@ const TransactionDetails = () => {
                           </p>
                     </div>
             
-                    <div className="flex flex-col items-start xl:flex-row xl:items-center space-x-0 xl:space-x-80 pb-4">
+                    <div className="flex flex-col items-start xl:flex-row xl:items-center space-x-0 xl:space-x-80 pb-6">
                       <div className="flex flex-row items-center space-x-2 pb-2 xl:pb-0">
                         <p className="text-white font-medium">Token Transfer</p>
                         </div>
