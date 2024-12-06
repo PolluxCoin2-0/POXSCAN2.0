@@ -2,6 +2,7 @@ import { useState } from "react";
 import CompanyLogo from "../assets/NavLogo.svg";
 import WhitePoxLogo from "../assets/whiteLogoPox.svg";
 import { MobileNavLink } from "./MobileNavLink";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -53,11 +54,13 @@ const Navbar = () => {
       <div className=" hidden w-full lg:flex items-center justify-between py-4">
         <div className="flex items-center justify-around space-x-12">
           {/* Company Logo */}
+          <Link to="/">
           <img
             src={CompanyLogo}
             alt="Company Logo"
             className="h-8 w-auto cursor-pointer"
           />
+          </Link>
 
           {/* Navbar Links */}
           <div className="hidden lg:flex lg:space-x-8 lg:pl-8 xl:space-x-16 ">
@@ -161,11 +164,13 @@ const Navbar = () => {
 
       {/* For Mobile Screen */}
       <div className="flex flex-row justify-between items-center lg:hidden py-4">
+      <Link to="/">
   <img
     src={CompanyLogo}
     alt="Company Logo"
     className="h-8 w-auto cursor-pointer"
   />
+  </Link>
   <button onClick={toggleMobileMenu} className="text-white p-2">
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -188,11 +193,13 @@ const Navbar = () => {
       style={{ transform: isMobileMenuOpen ? 'translateX(0)' : 'translateX(-100%)' }}
     >
       <div className="flex flex-row justify-between items-center">
+      <Link to="/">
       <img
     src={CompanyLogo}
     alt="Company Logo"
     className="h-8 w-auto cursor-pointer"
   />
+  </Link>
 <svg onClick={toggleMobileMenu} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#73E74D" className="size-6">
   <path strokeLinecap="round" strokeLinejoin="round" d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
 </svg>

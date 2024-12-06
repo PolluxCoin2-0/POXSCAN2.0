@@ -1,7 +1,7 @@
 import Search from "../../components/Search"
 import Nodes from "../../assets/Nodes.svg";
 import Regions from "../../assets/Regions.svg";
-import Globe from "../../components/Blockchain/Globe";
+import GlobeComponent from "../../components/Blockchain/Globe";
 
 const Node = () => {
   return (
@@ -32,8 +32,8 @@ const Node = () => {
             Distribution
         </p>
 
-        <div className="bg-[#151515] border-[1px] border-[#434343] rounded-3xl px-6 py-5 my-3 shadow-lg">
-            <Globe/>
+        <div className="bg-[#151515] border-[1px] border-[#434343] rounded-3xl px-6 py-5 my-3 shadow-lg flex justify-center items-center">
+            <GlobeComponent/>
         </div>
     </div>
   )

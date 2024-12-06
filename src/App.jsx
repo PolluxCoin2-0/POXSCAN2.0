@@ -7,7 +7,7 @@ import Footer from "./layout/Footer";
 
 function App() {
   return (
-    <div className="bg-black min-h-screen relative">
+    <div className="bg-black min-h-screen overflow-x-hidden relative">
       <Router>
         <div className="px-4 lg:px-8 xl:px-28 2xl:px-52">
           <Navbar />
