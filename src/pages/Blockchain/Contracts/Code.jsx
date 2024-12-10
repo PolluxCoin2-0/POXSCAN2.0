@@ -6,51 +6,57 @@ const Code = () => {
       <p className="text-lg font-semibold">
         Contract Source Code Verified (Perfect match){" "}
       </p>
-      <div className="flex flex-row justify-between w-full mt-8">
-        <div className="w-[50%]  space-y-3">
-          <div className="flex flex-row item-center space-x-[281px]">
-            <p className="text-lightestGray font-medium text-[17px]">
+      <div className="flex flex-col md:flex-row justify-between space-x-0 md:space-x-8 lg:space-x-32 w-full mt-8 pr-0 md:pr-4"> 
+        <div className="w-full md:w-[50%] space-y-3">
+          <div className="flex flex-row item-center justify-between ">
+            <p className="text-lightestGray font-medium text-[15px] lg:text-[17px]">
               Contract Name
             </p>
-            <p className="font-medium text-[17px]">Uvi Token</p>
+            <p className="font-medium text-[15px] lg:text-[17px] text-end ">Uvi Token</p>
           </div>
 
-          <div className="flex flex-row item-center space-x-[297px]">
-            <p className="text-lightestGray font-medium text-[17px]">
+          <div className="flex flex-row item-center justify-between ">
+            <p className="text-lightestGray font-medium text-[15px] lg:text-[17px]">
               Optimization
             </p>
-            <p className="font-medium text-[17px]">No</p>
+            <p className="font-medium text-[15px] lg:text-[17px]">No</p>
           </div>
 
-          <div className="flex flex-row item-center space-x-[300px]">
-            <p className="text-lightestGray font-medium text-[17px]">
+          <div className="flex flex-row item-center justify-between ">
+            <p className="text-lightestGray font-medium text-[15px] lg:text-[17px]">
               Audit Report
             </p>
-            <p className="font-medium text-[17px]">
+            <p className="hidden md:block font-medium text-[15px] lg:text-[17px]">
               No audit report yet (Submit here)
+            </p>
+            <p className="block md:hidden font-medium text-[15px] lg:text-[17px] text-end">
+              No audit report yet <br/>(Submit here)
             </p>
           </div>
         </div>
 
-        <div className="w-[50%] space-y-3">
-          <div className="flex flex-row item-center space-x-[250px]">
-            <p className="text-lightestGray font-medium text-[17px]">
+        <div className="w-full md:w-[50%] space-y-3 mt-3 md:mt-0">
+          <div className="flex flex-row item-center justify-between">
+            <p className="text-lightestGray font-medium text-[15px] lg:text-[17px]">
               Compiler Version
             </p>
-            <p className="font-medium text-[17px] text-nowrap">
+            <p className="hidden md:block font-medium text-[15px] lg:text-[17px] text-end">
               solidity pollux_v0.8.23+commit.5f1834b{" "}
+            </p>
+            <p className="block md:hidden font-medium text-[15px] lg:text-[17px] text-end">
+              solidity pollux_v <br/>0.8.23+commit.5f1834b{" "}
             </p>
           </div>
 
-          <div className="flex flex-row item-center space-x-[326px]">
-            <p className="text-lightestGray font-medium text-[17px]">License</p>
-            <p className="font-medium text-[17px]">MIT license</p>
+          <div className="flex flex-row item-center justify-between ">
+            <p className="text-lightestGray font-medium text-[15px] lg:text-[17px]">License</p>
+            <p className="font-medium text-[15px] lg:text-[17px]">MIT license</p>
           </div>
         </div>
       </div>
 
       {/* code editor */}
-      <div className="bg-lightMidGray mt-6 rounded-2xl p-5 space-y-2">
+      <div className="bg-lightMidGray mt-6 rounded-2xl p-3 md:p-5 space-y-2">
         <p className="text-lg font-semibold">Contract Code</p>
         <p className="text-md font-semibold">Uvi Token</p>
         <div className="flex flex-row space-x-4 items-center">
