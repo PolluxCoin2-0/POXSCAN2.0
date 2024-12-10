@@ -66,7 +66,7 @@ const Navbar = () => {
           <div className="hidden lg:flex lg:space-x-8 lg:pl-8 xl:space-x-16 ">
             <NavLink
               label="Blockchain"
-              href="#"
+              href="/blockchain/node"
               hasDropdown={true}
               dropdownItems={[
                 { href: "/blockchain/node", label: "Node" },
@@ -77,7 +77,7 @@ const Navbar = () => {
                 { href: "/blockchain/contracts", label: "Contracts" },
               ]}
             />
-            <NavLink href="#" label="Tokens" />
+            <NavLink href="/tokens" label="Tokens" />
             <NavLink
               href="#"
               label="Data"
@@ -222,6 +222,7 @@ const Navbar = () => {
         toggleDropdown={() => toggleDropdown(0)} 
       />
        <MobileNavLink
+       link='/tokens'
         label="Tokens"
         hasDropdown={false}
         dropdownItems={[]}

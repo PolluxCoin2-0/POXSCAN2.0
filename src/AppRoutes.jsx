@@ -11,6 +11,8 @@ import ProducerDetails from "./components/ProducerDetails";
 import AccountContractDetails from "./components/AccountContractDetails";
 import AccountDetails from "./components/AccountDetails";
 import Accounts from "./pages/Blockchain/Accounts";
+import Tokens from "./pages/Tokens/Tokens";
+import TokenDetails from "./components/Tokens/TokenDetails";
 const AppRoutes = () => {
   return (
     <Routes>
@@ -26,6 +28,8 @@ const AppRoutes = () => {
       <Route path="/producerdetails" element={<ProducerDetails />} />
       <Route path="/accountdetails" element={<AccountDetails />} />
       <Route path="/accountcontractdetails" element={<AccountContractDetails/>}/>
+      <Route path="/tokens" element={<Tokens/>}/>
+      <Route path="/tokendetails" element={<TokenDetails/>}/>
       {/* Add more routes here as needed */}
     </Routes>
   );

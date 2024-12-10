@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { Link } from "react-router-dom";
 
-export const MobileNavLink = ({ label, hasDropdown = false, dropdownItems = [], index, isDropdownOpen, toggleDropdown }) => {
+export const MobileNavLink = ({link, label, hasDropdown = false, dropdownItems = [], index, isDropdownOpen, toggleDropdown }) => {
   return (
     <div className="flex flex-col space-y-4">
       {/* Main Link Item */}
@@ -8,7 +8,13 @@ export const MobileNavLink = ({ label, hasDropdown = false, dropdownItems = [], 
         className="flex flex-row justify-between items-center text-[#73E74D] cursor-pointer hover:bg-gray-700 p-2 rounded-md transition-all duration-300"
         onClick={hasDropdown ? toggleDropdown : null} // Toggle dropdown if it has items
       >
-        <span className="text-base font-bold">{label}</span>
+        {link ? (
+          <Link to={link} className="text-base font-bold">
+            {label}
+          </Link>
+        ) : (
+          <span className="text-base font-bold">{label}</span>
+        )}
         {hasDropdown && (
           <svg
             xmlns="http://www.w3.org/2000/svg"
