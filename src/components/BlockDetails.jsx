@@ -43,7 +43,7 @@ const BlockDetails = () => {
       {/* Block Details */}
       <div className="pb-4">
         <p className="font-medium text-xl pb-4 text-white">Block Details</p>
-        <div className="flex flex-row items-center space-x-4">
+        <div className="flex flex-row flex-wrap items-center space-x-4">
           <p className="text-white border-[1px] border-gray-500 border-opacity-50 px-3 py-1 rounded-xl whitespace-nowrap">
             Block:
             <span className="text-[#37DD00] font-semibold"> #12345</span>
@@ -51,7 +51,7 @@ const BlockDetails = () => {
           <p className="text-white bg-[#242D22] px-3 py-[6px] rounded-lg border-[1px] border-[#434343] text-sm">
             Producer: rockblack
           </p>
-          <div className="flex flex-row items-center space-x-2">
+          <div className="flex flex-row items-center space-x-2 mt-2 md:mt-0">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -87,7 +87,7 @@ const BlockDetails = () => {
       {/* Block Hash and Total Consumption */}
       <div className="grid grid-cols-1 xl:grid-cols-[70%_30%] gap-4">
         <div className="bg-[#151515] border-[1px] border-[#434343] rounded-3xl px-6 py-5 my-3 shadow-lg">
-          <div className="flex flex-row items-center space-x-0 md:space-x-[280px] pb-6">
+          <div className="flex flex-col space-y-2 md:space-y-0 md:flex-row md:items-center space-x-0 md:space-x-[280px] pb-6">
             <div className="flex flex-row items-center space-x-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -323,7 +323,7 @@ const BlockDetails = () => {
             </div>
           </div>
 
-          <div className="flex flex-row items-center space-x-0 md:space-x-[240px] pb-6">
+          <div className="flex flex-col space-y-2 md:space-y-0 md:flex-row md:items-center space-x-0 md:space-x-[240px] pb-6">
             <div className="flex flex-row items-center space-x-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -494,7 +494,7 @@ const BlockDetails = () => {
 
       {/* Transactions and Internal Trxns Component */}
       <div className="pb-6">
-        {showTransactionsInternalTxns ? <Transaction /> : <Transaction />}
+        {showTransactionsInternalTxns ? <div className="overflow-x-auto pb-6"> <Transaction/> </div> : <div className="overflow-x-auto pb-6"> <Transaction/> </div>}
       </div>
     </div>
   );

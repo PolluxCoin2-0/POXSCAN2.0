@@ -3,7 +3,6 @@ import PoxLogo from '../assets/PoxLogo.svg';
 import SulLogo from "../assets/SulLogo.svg";
 import UsdxLogo from "../assets/UsdxLogo.svg";
 import UviLogo from "../assets/UviLogo.svg";
-import BlocksReward from "../assets/BlocksrewardImg.svg";
 import SearchByToken from "./SearchByToken";
 import { useState } from "react";
 import Transaction from "./Transaction";
@@ -24,13 +23,14 @@ const AccountDetails = () => {
       </div>
 
       {/* Account */}
-      <div className="pb-6">
+      <div className="pb-2 md:pb-6">
         <p className="pb-4 text-xl font-medium">Account</p>
 
-        <div className="flex flex-row justify-between items-center">
+        <div className="flex flex-col items-start space-y-4 md:space-y-0 lg:flex-row lg:justify-between lg:items-center">
           <div className="flex flex-row justify-center items-center space-x-4">
             <div className="flex flex-row items-center space-x-4 border-[1px] border-[#434343] rounded-2xl py-2 px-2">
-              <p className="text-base text-white font-medium ">PHDBDNMJdfbmfdnvjkdshfjjhfksfbsjhkdhfjkashfgjkasdfhdjgg</p>
+              <p className="hidden md:block text-base text-white font-medium ">PHDBDNMJdfbmfdnvjkdshfjjhfksfbsjhkdhfjkashfgjkasdfhdjgg</p>
+              <p className="block md:hidden text-base text-white font-medium">{`PSTv3ZweeCRHd5cmxoL3dTTbSKGgtYZ5cm`.slice(0,8)+"..."+`PSTv3ZweeCRHd5cmxoL3dTTbSKGgtYZ5cm`.slice(-8)}</p>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#37DD00" className="size-6">
              <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 0 1-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 0 1 1.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 0 0-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 0 1-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 0 0-3.375-3.375h-1.5a1.125 1.125 0 0 1-1.125-1.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H9.75" />
              </svg>
@@ -43,14 +43,14 @@ const AccountDetails = () => {
 
           </div>
 
-         <div className="flex flex-row items-center space-x-16">
+         <div className="flex flex-col space-y-4 md:space-y-0 md:flex-row md:items-center md:space-x-16">
           <div>
-            <p className="text-white pb-1 text-sm text-end">Recent Activity (UTC)</p>
+            <p className="text-white pb-1 text-sm text-left md:text-end">Recent Activity (UTC)</p>
             <p className="text-white font-medium text-sm text-end">2024-11-26T03:20:45.556Z</p>
           </div>
 
           <div>
-            <p className="text-white pb-1 text-sm text-end">Created on (UTC)</p>
+            <p className="text-white pb-1 text-sm text-left md:text-end">Created on (UTC)</p>
             <p className="text-white font-medium text-sm text-end"> 2024-11-26T03:20:45.556Z</p>
           </div>
           </div>
@@ -282,9 +282,9 @@ const AccountDetails = () => {
       {/* Second Column >>> Current Ranking, Current Votes, Reward Distribution */}
       <div className="w-full">
         {/* Wallet , Portfolio, Approval */}
-        <div className="bg-[#151515] border-[1px] border-[#434343] rounded-3xl px-6 py-6 my-3 shadow-lg">
-          <div className="flex flex-row items-center space-x-6">
-            <button className="px-4 bg-white font-bold text-black rounded-md py-2">
+        <div className="bg-[#151515] border-[1px] border-[#434343] rounded-3xl px-2 md:px-6 py-6 my-3 shadow-lg">
+          <div className="inline-grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-6">
+            <button className="px-4 bg-white font-bold text-black rounded-md py-2 whitespace-nowrap">
               Wallet (3)
             </button>
             <button className="text-white text-opacity-20 bg-[#3E423C] px-4 py-2 rounded-md font-bold">
@@ -318,7 +318,8 @@ const AccountDetails = () => {
               <img src={UsdxLogo} alt="pox-logo" className="w-7 h-7"/>
               <div>
               <p className="text-white font-medium pb-[2px]">Pollux USD (USDX) </p>
-              <p className="text-white font-medium">PSTv3ZweeCRHd5cmxoL3dTTbSKGgtYZ5cm</p>
+              <p className="block md:hidden text-white font-normal">{`PSTv3ZweeCRHd5cmxoL3dTTbSKGgtYZ5cm`.slice(0,6)+"..."+`PSTv3ZweeCRHd5cmxoL3dTTbSKGgtYZ5cm`.slice(-6)}</p>
+              <p className="hidden md:block text-white font-normal">PSTv3ZweeCRHd5cmxoL3dTTbSKGgtYZ5cm</p>
               </div>
             </div>
 
@@ -334,7 +335,8 @@ const AccountDetails = () => {
               <img src={UviLogo} alt="pox-logo" />
               <div>
               <p className="text-white font-medium pb-[2px]">UVI TOKEN (UVI)</p>
-              <p className="text-white font-medium">PSTv3ZweeCRHd5cmxoL3dTTbSKGgtYZ5cm</p>
+              <p className="block md:hidden text-white font-normal">{`PSTv3ZweeCRHd5cmxoL3dTTbSKGgtYZ5cm`.slice(0,6)+"..."+`PSTv3ZweeCRHd5cmxoL3dTTbSKGgtYZ5cm`.slice(-6)}</p>
+              <p className="hidden md:block text-white font-normal">PSTv3ZweeCRHd5cmxoL3dTTbSKGgtYZ5cm</p>
               </div>
             </div>
 
@@ -350,7 +352,8 @@ const AccountDetails = () => {
               <img src={SulLogo} alt="pox-logo" className=""/>
               <div>
               <p className="text-white font-medium pb-[2px]">SULAANA TOKEN(SUL)</p>
-              <p className="text-white font-medium">PSTv3ZweeCRHd5cmxoL3dTTbSKGgtYZ5cm</p>
+              <p className="block md:hidden text-white font-normal">{`PSTv3ZweeCRHd5cmxoL3dTTbSKGgtYZ5cm`.slice(0,6)+"..."+`PSTv3ZweeCRHd5cmxoL3dTTbSKGgtYZ5cm`.slice(-6)}</p>
+              <p className="hidden md:block text-white font-normal">PSTv3ZweeCRHd5cmxoL3dTTbSKGgtYZ5cm</p>
               </div>
             </div>
 
@@ -389,7 +392,7 @@ const AccountDetails = () => {
         </div>
         <div className="pt-4">
           {
-            transactionsToggleButton ? <Transaction/> : <Transaction/>
+            transactionsToggleButton ? <div className="overflow-x-auto pb-6"> <Transaction/> </div>:<div className="overflow-x-auto pb-6"> <Transaction/></div>
           }
         </div>
       </div>
