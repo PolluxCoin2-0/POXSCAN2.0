@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { toast } from "react-toastify";
 import Loader from "../../../components/Loader";
+
 const readContract = [
   {
     id: 1,
@@ -36,34 +37,36 @@ const readContract = [
 ];
 
 const ReadContract = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [isView, setIsView] = useState(false);
+  const [isOpen, setIsOpen] = useState(null);
+  const [inputValues, setInputValues] = useState({});
+  const [loadingId, setLoadingId] = useState(null); // New state for loader
 
   const handleToggle = (id) => {
-    // If the clicked section is already open, toggle it off. Otherwise, open the clicked section
-    if (isOpen === id) {
-      setIsOpen(null); // Close it
-    } else {
-      setIsOpen(id); // Open clicked section
-    }
+    setIsOpen(isOpen === id ? null : id); // Toggle dropdown
   };
 
-  const handleView = () => {
-    setIsView(!isView);
+  const handleInputChange = (id, value) => {
+    setInputValues((prev) => ({ ...prev, [id]: value }));
   };
-
-  // const handleChange = (event) => {
-  //   setInputValue(event.target.value);
-  // };
 
   const handleCopy = (issueTime) => {
     navigator.clipboard.writeText(issueTime);
-    toast.success(" copied!");
+    toast.success("Copied!");
+  };
+
+  const handleViewClick = (id) => {
+    setLoadingId(id);
+    setTimeout(() => {
+      toast.success(
+        `Data viewed for ${readContract.find((item) => item.id === id).title}`
+      );
+      setLoadingId(null); // Stop loader
+    }, 2000); // Simulate async action
   };
 
   return (
     <div className="">
-      <div className="flex flex-row justify-end space-x-2">
+      <div className="flex flex-row justify-end space-x-1 md:space-x-2">
         <p className="font-medium">[Expand]</p>
         <p className="font-medium">[Reset]</p>
       </div>
@@ -115,7 +118,7 @@ const ReadContract = () => {
                 </p>
               </div>
 
-              <div className="flex justify-end space-x-5 p-3">
+              <div className="flex justify-end space-x-2 md:space-x-5 p-3">
                 <p
                   className="text-xl"
                   onClick={() => handleCopy("DOMAIN_SEPARATOR")}
@@ -163,49 +166,48 @@ const ReadContract = () => {
               {isOpen === data.id && (
                 <div className="pb-1">
                   <div className="flex flex-col space-y-4 ml-5 mb-6">
-                    {/* Display address just above the View button */}
-                    {isView && (
-                      <p className="mt-1 text-lg font-bold">
-                        {data.id === 1 && (
-                          <p className="text-lg text-white">
-                            <Loader />
-                          </p>
+                    {data.viewTitle === "View" &&
+                    (index === 0 || index === 3 || index === 4) ? (
+                      <button
+                        className="border-[1px] border-light-gray rounded-md px-0 py-1 w-[90px] bg-white text-black text-md font-medium text-center"
+                        onClick={() => handleViewClick(data.id)}
+                        style={{ cursor: "pointer" }}
+                        disabled={loadingId === data.id}
+                      >
+                        {loadingId === data.id ? (
+                          <div className="flex flex-row items-center space-x-0 pl-2">
+                            <Loader /> {/* Your Loader Component */}
+                            <span>View</span>
+                          </div>
+                        ) : (
+                          "View"
                         )}
-                        {data.id === 2 && (
-                          <input
-                            type="text"
-                            className="border-[1px] border-[#434343] rounded-xl py-2 px-4 bg-[#D9D9D9] bg-opacity-15 w-[90%] placeholder:text-white placeholder:font-normal text-[16px]"
-                            placeholder={data.placeholder}
-                          />
-                        )}
-                        {data.id === 3 && (
-                          <input
-                            type="text"
-                            className="border-[1px] border-[#434343] rounded-xl py-2 px-4 bg-[#D9D9D9] bg-opacity-15 w-[90%] placeholder:text-white placeholder:font-normal text-[16px]"
-                            placeholder={data.placeholder}
-                          />
-                        )}
-                        {data.id === 4 && (
-                          <p className="text-lg text-white">
-                             <Loader />
-                          </p>
-                        )}
-                        {data.id === 5 && (
-                          <p className="text-lg text-white">
-                             <Loader />
-                          </p>
-                        )}
-                      </p>
-                    )}
+                      </button>
+                    ) : (
+                      <>
+                        {/* Input field */}
+                        <input
+                          type="text"
+                          className="border-[1px] border-[#434343] rounded-xl py-2 px-4 bg-[#D9D9D9] bg-opacity-15 w-[90%] placeholder:text-white placeholder:font-normal text-[16px]"
+                          placeholder={data.placeholder}
+                          value={inputValues[data.id] || ""}
+                          onChange={(e) =>
+                            handleInputChange(data.id, e.target.value)
+                          }
+                        />
 
-                    {/* View Button */}
-                    <p
-                      className="border-[1px] border-light-gray rounded-md px-0 py-1 w-[70px] bg-white text-black text-md font-medium text-center"
-                      onClick={handleView}
-                      style={{ cursor: "pointer" }}
-                    >
-                      {data.viewTitle}
-                    </p>
+                        {/* Send Button */}
+                        <p
+                          className="border-[1px] border-light-gray rounded-md px-0 py-1 w-[70px] bg-white text-black text-md font-medium text-center"
+                          onClick={() =>
+                            toast.success(`Sent: ${inputValues[data.id]}`)
+                          }
+                          style={{ cursor: "pointer" }}
+                        >
+                          {data.viewTitle}
+                        </p>
+                      </>
+                    )}
                   </div>
                 </div>
               )}

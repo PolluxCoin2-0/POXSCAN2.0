@@ -5,7 +5,7 @@ const writeContract = [
   {
     id: 1,
     title: "distributeReferralRewards",
-    viewTitle: "View",
+    viewTitle: "Send",
     placeholder: "minter_address"
   },
   {
@@ -24,35 +24,25 @@ const writeContract = [
 ];
 
 const WriteContract = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [isView, setIsView] = useState(false);
+  const [isOpen, setIsOpen] = useState(null);
+  const [inputValues, setInputValues] = useState({});
 
-  
   const handleToggle = (id) => {
-    // If the clicked section is already open, toggle it off. Otherwise, open the clicked section
-    if (isOpen === id) {
-      setIsOpen(null); // Close it
-    } else {
-      setIsOpen(id); // Open clicked section
-    }
+    setIsOpen(isOpen === id ? null : id); // Toggle dropdown
   };
 
-  const handleView = () => {
-    setIsView(!isView);
+  const handleInputChange = (id, value) => {
+    setInputValues((prev) => ({ ...prev, [id]: value }));
   };
-
-  // const handleChange = (event) => {
-  //   setInputValue(event.target.value);
-  // };
 
   const handleCopy = (issueTime) => {
     navigator.clipboard.writeText(issueTime);
-    toast.success(" copied!");
+    toast.success("Copied!");
   };
 
   return (
     <div className="">
-      <div className="flex flex-row justify-end space-x-2">
+      <div className="flex flex-row justify-end space-x-1 md:space-x-2">
         <p className="font-medium">[Expand]</p>
         <p className="font-medium">[Reset]</p>
       </div>
@@ -104,7 +94,7 @@ const WriteContract = () => {
                 </p>
               </div>
 
-              <div className="flex justify-end space-x-5 p-3">
+              <div className="flex justify-end space-x-2 md:space-x-5 p-3">
                 <p
                   className="text-xl"
                   onClick={() => handleCopy("DOMAIN_SEPARATOR")}
@@ -152,21 +142,21 @@ const WriteContract = () => {
               {isOpen === data.id && (
                 <div className="pb-1">
                   <div className="flex flex-col space-y-4 ml-5 mb-6">
-                    {/* Display address just above the View button */}
-                    {isView && (
-                      <p className="mt-1 text-lg font-bold">
-                       <input
-                       type="text"
-                       className="border-[1px] border-[#434343] rounded-xl py-2 px-4 bg-[#D9D9D9] bg-opacity-15 w-[90%] placeholder:text-white placeholder:font-normal text-[16px]"
-                       placeholder={data.placeholder}
-                       />
-                      </p>
-                    )}
+                    {/* Input field */}
+                    <input
+                      type="text"
+                      className="border-[1px] border-[#434343] rounded-xl py-2 px-4 bg-[#D9D9D9] bg-opacity-15 w-[90%] placeholder:text-white placeholder:font-normal text-[16px]"
+                      placeholder={data.placeholder}
+                      value={inputValues[data.id] || ""}
+                      onChange={(e) =>
+                        handleInputChange(data.id, e.target.value)
+                      }
+                    />
 
-                    {/* View Button */}
+                    {/* Send Button */}
                     <p
                       className="border-[1px] border-light-gray rounded-md px-0 py-1 w-[70px] bg-white text-black text-md font-medium text-center"
-                      onClick={handleView}
+                      onClick={() => toast.success(`Sent: ${inputValues[data.id]}`)}
                       style={{ cursor: "pointer" }}
                     >
                       {data.viewTitle}

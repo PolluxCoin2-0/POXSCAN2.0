@@ -1,7 +1,7 @@
 
 const SearchByToken = ({ placeholder = "Search by token", onChange, value }) => {
   return (
-    <div className="flex flex-row items-center space-x-2 my-4 py-[10px] px-4 border-[1px] border-[#B9BDB8] rounded-2xl">
+    <div className="flex flex-row items-center space-x-2 my-4 py-[8px] md:py-[10px] px-2 md:px-4 border-[1px] border-[#B9BDB8] rounded-xl md:rounded-2xl">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"

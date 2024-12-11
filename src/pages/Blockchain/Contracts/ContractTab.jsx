@@ -20,16 +20,16 @@ const Contract = () => {
     }
   };
   return (
-    <div className="mt-6 mb-6 border-[1px] border-[#434343] rounded-2xl p-5 bg-lightestGreen"
+    <div className="mt-6 mb-6 border-[1px] border-[#434343] rounded-2xl p-3 md:p-5 bg-lightestGreen "
     style={{
       background: "radial-gradient(at center, #0F180F, #0F0F0F)", // Radial gradient from the center
     }}>
-    <div className="flex flex-row justify-between items-center "
+    <div className="flex flex-col lg:flex-row justify-between items-center md:items-start lg:items-center pt-2"
    >
-        <div className="flex flex-row items-center space-x-4 pb-2">
+        <div className="flex flex-row items-center pb-2 flex-wrap gap-x-4 gap-y-4 md:gap-x-4 md:flex-nowrap">
           <button
             onClick={() => setActiveTab("Code")}
-            className={`text-md font-semibold px-12 py-[7px] rounded-lg ${
+            className={`text-md font-semibold px-10 md:px-11 py-[7px] rounded-lg ${
               activeTab === "Code"
                 ? "text-black bg-white"
                 : "text-lightestGray text-opacity-40 bg-lightGray"
@@ -40,7 +40,7 @@ const Contract = () => {
 
           <button
             onClick={() => setActiveTab("Read Contract")}
-            className={`text-md font-semibold px-6 py-[7px] rounded-lg ${
+            className={`text-md font-semibold px-3 md:px-6 py-[7px] rounded-lg text-nowrap ${
               activeTab === "Read Contract"
                 ? "text-black bg-white"
                 : "text-lightestGray text-opacity-40 bg-lightGray"
@@ -51,7 +51,7 @@ const Contract = () => {
 
           <button
             onClick={() => setActiveTab("Write Contract")}
-            className={`text-md font-semibold px-6 py-[7px] rounded-lg ${
+            className={`text-md font-semibold px-2 md:px-6 py-[7px] rounded-lg text-nowrap ${
               activeTab === "Write Contract"
                 ? "text-black bg-white"
                 : "text-lightestGray text-opacity-40 bg-lightGray"
@@ -62,7 +62,7 @@ const Contract = () => {
         </div>
 
        {/* search by token */}
-      <div className="flex flex-row items-center space-x-2">
+      <div className="flex flex-row items-center space-x-1 md:space-x-2">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"

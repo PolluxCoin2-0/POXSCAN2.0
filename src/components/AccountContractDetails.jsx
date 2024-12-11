@@ -13,7 +13,7 @@ const AccountContractDetails = () => {
       case "Contract":
         return <ContractTab />;
       case "Transfers":
-        return <Transaction/>;
+        return <Transaction />;
       default:
         return null;
     }
@@ -29,12 +29,15 @@ const AccountContractDetails = () => {
       {/* Account */}
       <div className="pb-6">
         <p className="pb-4 text-xl font-medium">Account</p>
-        <div className="flex flex-row justify-between items-center">
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center">
           <div className="flex flex-row justify-center items-center space-x-4">
             <div className="flex flex-row items-center space-x-4 border-[1px] border-[#434343] rounded-xl py-2 px-2">
-              <p className="text-base text-white font-medium ">
+              <span className="block sm:hidden">
+                {`PHDBDNMJdfbmfdnvj`.slice(0, 15)}...
+              </span>
+              <span className="hidden sm:block">
                 PHDBDNMJdfbmfdnvjkdshfjjhfksfbsjhkdhfjkashfgjkasdfhdjgg
-              </p>
+              </span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -71,7 +74,7 @@ const AccountContractDetails = () => {
             </svg>
           </div>
 
-          <div className="flex flex-row items-center space-x-16">
+          <div className="flex flex-col md:flex-row items-start md:items-center space-x-0 md:space-x-16 mt-4 lg:mt-0">
             <div>
               <p className="text-white pb-1 text-sm">Recent Activity (UTC)</p>
               <p className="text-white font-medium text-sm">
@@ -79,11 +82,11 @@ const AccountContractDetails = () => {
               </p>
             </div>
 
-            <div>
-              <p className="text-white pb-1 text-sm text-end">
+            <div className="mt-4 md:mt-0">
+              <p className="text-white pb-1 text-sm text-start lg:text-end">
                 Created on (UTC)
               </p>
-              <p className="text-white font-medium text-sm text-end">
+              <p className="text-white font-medium text-sm text-start lg:text-end">
                 {" "}
                 2024-11-26T03:20:45.556Z
               </p>
@@ -99,12 +102,12 @@ const AccountContractDetails = () => {
         </p>
 
         {/* Uvitoken contract and calling overview */}
-        <div className="flex flex-row w-full mt-6 space-x-6">
+        <div className="flex flex-col lg:flex-row w-full mt-6 space-x-0 lg:space-x-6">
           {/* uvitoken contract */}
-          <div className="w-[60%] border-[1px] border-[#434343] rounded-2xl p-5 bg-lightestGreen">
+          <div className="w-full lg:w-[60%] border-[1px] border-[#434343] rounded-2xl p-3 md:p-5 bg-lightestGreen">
             <p className="text-xl font-semibold">Overview</p>
 
-            <div className="flex flex-row items-center space-x-0 md:space-x-[280px] pb-5 mt-5">
+            <div className="flex flex-col md:flex-row items-start md:items-center space-x-8 md:space-x-[280px] pb-5 mt-5">
               <div className="flex flex-row items-center space-x-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -122,12 +125,12 @@ const AccountContractDetails = () => {
                 </svg>
                 <p className="text-white font-medium whitespace-nowrap">Name</p>
               </div>
-              <div className="text-white font-medium whitespace-nowrap">
+              <div className="font-medium whitespace-nowrap text-lightestGray md:text-white">
                 Uvi Token
               </div>
             </div>
 
-            <div className="flex flex-row items-center space-x-0 md:space-x-[236px] pb-6">
+            <div className="flex flex-col md:flex-row items-start md:items-center space-x-8 md:space-x-[236px] pb-6 ">
               <div className="flex flex-row items-center space-x-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -147,12 +150,12 @@ const AccountContractDetails = () => {
                   Total Assets
                 </p>
               </div>
-              <div className="text-white font-medium whitespace-nowrap">
+              <div className="font-medium whitespace-nowrap text-lightestGray md:text-white">
                 $0.00 (0 POX)
               </div>
             </div>
 
-            <div className="flex flex-row items-center space-x-0 md:space-x-[233px] pb-5">
+            <div className="flex flex-col md:flex-row items-start md:items-center space-x-8 md:space-x-[233px] pb-5">
               <div className="flex flex-row items-center space-x-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -172,12 +175,12 @@ const AccountContractDetails = () => {
                   Transactions
                 </p>
               </div>
-              <div className="text-white font-medium whitespace-nowrap">
+              <div className="font-medium whitespace-nowrap text-lightestGray md:text-white">
                 1949875
               </div>
             </div>
 
-            <div className="flex flex-row items-center space-x-0 md:space-x-[269px] pb-5">
+            <div className="flex flex-col md:flex-row items-start md:items-center space-x-8 md:space-x-[269px] pb-5">
               <div className="flex flex-row items-center space-x-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -193,17 +196,18 @@ const AccountContractDetails = () => {
                     d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z"
                   />
                 </svg>
-                <p className="text-white font-medium whitespace-nowrap">
+                <p className="text-white font-medium whitespace-nowrap ">
                   Creator
                 </p>
               </div>
-              <div className="text-white font-medium">
-                PXSDcHzdQX99DmHgQvCGzvHbVVtZQEBJP/ at Txn /
-                d3fe3dc36194e6c5c115989f113ad12753a2990c7f8...
+              <div className="font-medium text-lightestGray md:text-white  ">
+                <p className="block md:hidden text-sm">PXSDcHzdQX99DmHgQvCGzvHbVV <br/>tZQEBJP/ at Txn / d3fe3dc36194e6c5c115989f113ad1275<br/>3a2990c7f8...</p>
+                <p className="hidden md:block text-[15px]">PXSDcHzdQX99DmHgQvCGzvHbVVtZQEBJP/ at Txn / d3fe3dc36194e6c5c115989f113ad12753a2990c7f8...</p>
+                
               </div>
             </div>
 
-            <div className="flex flex-row items-center space-x-0 md:space-x-[125px] pb-5">
+            <div className="flex flex-col md:flex-row items-start md:items-center space-x-8 md:space-x-[125px] pb-5">
               <div className="flex flex-row items-center space-x-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -219,16 +223,16 @@ const AccountContractDetails = () => {
                     d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z"
                   />
                 </svg>
-                <p className="text-white font-medium whitespace-nowrap">
+                <p className="font-medium whitespace-nowrap text-white">
                   Energy Consumption Ratio:
                 </p>
               </div>
-              <div className="text-white font-medium whitespace-nowrap">
+              <div className="font-medium whitespace-nowrap text-lightestGray md:text-white">
                 578
               </div>
             </div>
 
-            <div className="flex flex-row items-center space-x-0 md:space-x-[208px] pb-5">
+            <div className="flex flex-col md:flex-row items-start md:items-center space-x-8 md:space-x-[208px] pb-5">
               <div className="flex flex-row items-center space-x-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -248,7 +252,7 @@ const AccountContractDetails = () => {
                   Creators Energy
                 </p>
               </div>
-              <div className="flex flex-row items-center">
+              <div className="flex flex-row items-center text-lightestGray md:text-white">
                 <p>578(</p>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -283,7 +287,7 @@ const AccountContractDetails = () => {
               </div>
             </div>
 
-            <div className="flex flex-row items-center space-x-0 md:space-x-[82px] pb-5">
+            <div className="flex flex-col md:flex-row items-start md:items-center space-x-8 md:space-x-[82px] pb-5">
               <div className="flex flex-row items-center space-x-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -303,12 +307,12 @@ const AccountContractDetails = () => {
                   Extra Energy Consumption Factor
                 </p>
               </div>
-              <div className="text-white font-medium whitespace-nowrap">
+              <div className="font-medium whitespace-nowrap text-lightestGray md:text-white">
                 Consumed: 549 / 182997
               </div>
             </div>
 
-            <div className="flex flex-row items-center space-x-0 md:space-x-[160px] pb-5">
+            <div className="flex flex-col md:flex-row items-start md:items-center space-x-8 md:space-x-[160px] pb-5">
               <div className="flex flex-row items-center space-x-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -328,27 +332,28 @@ const AccountContractDetails = () => {
                   Energy & Pollux Power
                 </p>
               </div>
-              <div className="text-white font-medium whitespace-nowrap">
-                Energy Available 0 / Pollux Power: Voted 0/0
+              <div className="font-medium whitespace-nowrap text-lightestGray md:text-white">
+                <p className="hidden md:block">Energy Available 0 / Pollux Power: Voted 0/0</p>
+                <p className="block md:hidden">Energy Available 0 / <br/>Pollux Power: Voted 0/0</p>
               </div>
             </div>
           </div>
 
           {/* calling overview */}
-          <div className="w-[40%] border-[1px] border-[#434343] rounded-2xl p-5 bg-lightestGreen">
+          <div className="w-full lg:w-[40%] border-[1px] border-[#434343] rounded-2xl p-3 md:p-5 bg-lightestGreen mt-6 lg:mt-0">
             <div>
-              <div className="flex flex-row justify-between">
+              <div className="flex flex-col md:flex-row justify-between">
                 <p className="text-xl font-semibold">Calling Overview</p>
                 <p className="text-white font-normal whitespace-nowrap">
                   Only data within 24hrs is counted
                 </p>
               </div>
-              <div className="flex flex-row justify-between w-full mt-6 space-x-6">
-                <div className="w-[40%] border-[1px] border-[#434343] rounded-2xl p-5 bg-lightestGreen flex flex-col items-center py-12 space-y-2">
+              <div className="flex flex-col md:flex-row justify-between w-full mt-6 space-x-0 md:space-x-6">
+                <div className="w-full md:w-[40%] border-[1px] border-[#434343] rounded-2xl p-5 bg-lightestGreen flex flex-col items-center py-6 md:py-12 space-y-2">
                   <p className="text-darkGreen text-2xl font-bold">39550</p>
                   <p className="text-white text-opacity-50">Total Calls</p>
                 </div>
-                <div className="w-[60%] flex flex-row justify-between">
+                <div className="w-full md:w-[60%] flex flex-row justify-between mt-2 md:mt-0">
                   <div className="space-y-2">
                     <p className="text-darkGreen font-semibold">
                       Top 5 Methods
@@ -371,12 +376,12 @@ const AccountContractDetails = () => {
             </div>
 
             <div>
-              <div className="flex flex-row justify-between w-full mt-6 space-x-6">
-                <div className="w-[40%] border-[1px] border-[#434343] rounded-2xl p-5 bg-lightestGreen flex flex-col items-center py-12 space-y-2">
+              <div className="flex flex-col md:flex-row justify-between w-full mt-8 md:mt-6 space-x-0 md:space-x-6">
+                <div className="w-full md:w-[40%] border-[1px] border-[#434343] rounded-2xl p-5 bg-lightestGreen flex flex-col items-center py-6 md:py-12 space-y-2">
                   <p className="text-darkGreen text-2xl font-bold">39550</p>
                   <p className="text-white text-opacity-50">Total Calls</p>
                 </div>
-                <div className="w-[60%] flex flex-row justify-between">
+                <div className="w-full md:w-[60%] flex flex-row justify-between mt-2 md:mt-0">
                   <div className="space-y-2">
                     <p className="text-darkGreen font-semibold">
                       TOP 5 Addresses
@@ -427,45 +432,43 @@ const AccountContractDetails = () => {
 
       {/* Transaction, Contract, Transfer Table */}
       <div className="mt-6 mb-6">
-      <div className="flex flex-row items-center space-x-4 pb-2">
-      <button
-        onClick={() => setActiveTab("Transactions")}
-        className={`text-md font-semibold px-6 py-[9px] rounded-lg ${
-          activeTab === "Transactions"
-            ? "text-black bg-[#37DD00]"
-            : "text-white text-opacity-40 bg-[#0A2301]"
-        }`}
-      >
-        Transactions
-      </button>
+        <div className="flex flex-row items-center flex-wrap gap-x-4 gap-y-0 md:gap-x-4 md:flex-nowrap">
+          <button
+            onClick={() => setActiveTab("Transactions")}
+            className={`text-md font-semibold px-6 py-[9px] rounded-lg ${
+              activeTab === "Transactions"
+                ? "text-black bg-[#37DD00]"
+                : "text-white text-opacity-40 bg-[#0A2301]"
+            }`}
+          >
+            Transactions
+          </button>
 
-      <button
-        onClick={() => setActiveTab("Contract")}
-        className={`text-md font-semibold px-6 py-[9px] rounded-lg ${
-          activeTab === "Contract"
-            ? "text-black bg-[#37DD00]"
-            : "text-white text-opacity-40 bg-[#0A2301]"
-        }`}
-      >
-        Contract
-      </button>
+          <button
+            onClick={() => setActiveTab("Contract")}
+            className={`text-md font-semibold px-8 py-[9px] rounded-lg ${
+              activeTab === "Contract"
+                ? "text-black bg-[#37DD00]"
+                : "text-white text-opacity-40 bg-[#0A2301]"
+            }`}
+          >
+            Contract
+          </button>
 
-      <button
-        onClick={() => setActiveTab("Transfers")}
-        className={`text-md font-semibold px-6 py-[9px] rounded-lg ${
-          activeTab === "Transfers"
-            ? "text-black bg-[#37DD00]"
-            : "text-white text-opacity-40 bg-[#0A2301]"
-        }`}
-      >
-        Transfers
-      </button>
-      </div>
+          <button
+            onClick={() => setActiveTab("Transfers")}
+            className={`text-md font-semibold px-9 py-[9px] rounded-lg mt-4 md:mt-0 ${
+              activeTab === "Transfers"
+                ? "text-black bg-[#37DD00]"
+                : "text-white text-opacity-40 bg-[#0A2301]"
+            }`}
+          >
+            Transfers
+          </button>
+        </div>
 
-     {/* Active Component */}
-     <div className="mt-4">
-        {renderActiveComponent()}
-      </div>
+        {/* Active Component */}
+        <div className="mt-4">{renderActiveComponent()}</div>
       </div>
     </div>
   );
