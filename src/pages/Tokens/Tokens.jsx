@@ -115,7 +115,7 @@ const Tokens = () => {
       </div>
 
       {/* Tokens */}
-      <div className="overflow-x-auto pb-6">
+      <div className=" pb-6">
         {/* Header Section */}
         <div className="flex flex-row items-center justify-start space-x-5 px-0 md:px-6 md:justify-between md:space-x-0 py-4 min-w-[600px]">
           <h1 className="text-2xl font-bold text-white">Tokens</h1>
@@ -142,7 +142,9 @@ const Tokens = () => {
             </button>
           </div>
         </div>
+        <div className="overflow-x-auto">
         <TokensList />
+        </div>
       </div>
     </div>
   );
