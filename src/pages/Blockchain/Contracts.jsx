@@ -85,7 +85,7 @@ const Contracts = () => {
       <div className="overflow-x-auto pb-6">
         {/* Header Section */}
         <div className="flex flex-row items-center justify-start space-x-5 md:justify-between md:space-x-0 py-4 min-w-[600px]">
-          <h1 className="text-2xl font-bold text-white">Transactions</h1>
+          <h1 className="text-xl font-bold text-white">Transactions</h1>
           <div className="flex items-center gap-2 cursor-pointer hover:opacity-80 transition-opacity">
             <div className="flex flex-row items-center space-x-4 pb-2">
               <button

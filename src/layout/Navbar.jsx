@@ -88,14 +88,14 @@ const Navbar = () => {
               ]}
             />
             <NavLink
-              href="#"
+              href="/governance/superrepresentatives"
               label="Governance"
               hasDropdown={true}
               dropdownItems={[
-                { href: "#", label: "Super Representatives" },
-                { href: "#", label: "Votes" },
-                { href: "#", label: "POX Staking Governance" },
-                { href: "#", label: "Parameters & Proposals" },
+                { href: "/governance/superrepresentatives", label: "Super Representatives" },
+                { href: "/governance/votes", label: "Votes" },
+                { href: "/governance/poxstakinggovernance", label: "POX Staking Governance" },
+                { href: "/governance/parameterandproposal", label: "Parameters & Proposals" },
               ]}
             />
             <NavLink
@@ -245,10 +245,10 @@ const Navbar = () => {
         label="Governance"
         hasDropdown={true}
         dropdownItems={[
-          { href: "#", label: "Super Representatives" },
-          { href: "#", label: "Votes" },
-          { href: "#", label: "POX Staking Governance" },
-          { href: "#", label: "Parameters & Proposals" },
+          { href: "/governance/superrepresentatives", label: "Super Representatives" },
+          { href: "/governance/votes", label: "Votes" },
+          { href: "/governance/poxstakinggovernance", label: "POX Staking Governance" },
+          { href: "/governance/parameterandproposal", label: "Parameters & Proposals" },
         ]}
         index={3}
         isDropdownOpen={openDropdownIndex === 3}

@@ -13,6 +13,11 @@ import AccountDetails from "./components/AccountDetails";
 import Accounts from "./pages/Blockchain/Accounts";
 import Tokens from "./pages/Tokens/Tokens";
 import TokenDetails from "./components/Tokens/TokenDetails";
+import SuperRepresentatives from "./pages/Governance/SuperRepresentatives";
+import Votes from "./pages/Governance/Votes/Votes";
+import PoxStakingGovernance from "./pages/Governance/PoxStakingGovernance";
+import ParameterAndProposal from "./pages/Governance/ParameterAndProposal";
+
 const AppRoutes = () => {
   return (
     <Routes>
@@ -30,6 +35,10 @@ const AppRoutes = () => {
       <Route path="/accountcontractdetails" element={<AccountContractDetails/>}/>
       <Route path="/tokens" element={<Tokens/>}/>
       <Route path="/tokendetails" element={<TokenDetails/>}/>
+      <Route path="/governance/superrepresentatives" element={<SuperRepresentatives/>}/>
+      <Route path="/governance/votes" element={<Votes/>}/>
+      <Route path="/governance/poxstakinggovernance" element={<PoxStakingGovernance/>}/>
+      <Route path="/governance/parameterandproposal" element={<ParameterAndProposal/>}/>
       {/* Add more routes here as needed */}
     </Routes>
   );
