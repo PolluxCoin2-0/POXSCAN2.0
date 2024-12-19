@@ -17,6 +17,11 @@ import SuperRepresentatives from "./pages/Governance/SuperRepresentatives";
 import Votes from "./pages/Governance/Votes/Votes";
 import PoxStakingGovernance from "./pages/Governance/PoxStakingGovernance";
 import ParameterAndProposal from "./pages/Governance/ParameterAndProposal/ParameterAndProposal";
+import ContractsDeployment from "./pages/More/ContractsDeployment";
+import BroadcastTransaction from "./pages/More/BroadcastTransaction";
+import ContractsVerification from "./pages/More/ContractsVerification";
+import EncodingConverter from "./pages/More/EncodingConverter";
+import PRC20TokenDeployment from "./pages/More/PRC20TokenDeployment";
 
 const AppRoutes = () => {
   return (
@@ -39,6 +44,12 @@ const AppRoutes = () => {
       <Route path="/governance/votes" element={<Votes/>}/>
       <Route path="/governance/poxstakinggovernance" element={<PoxStakingGovernance/>}/>
       <Route path="/governance/parameterandproposal" element={<ParameterAndProposal/>}/>
+      <Route path="/more/contractsdeployment" element={<ContractsDeployment/>}/>
+      <Route path="/more/broadcasttransaction" element={<BroadcastTransaction/>}/>
+      <Route path="/more/contractsverification" element={<ContractsVerification/>}/>
+      <Route path="/more/encodingconverter" element={<EncodingConverter/>}/>
+      <Route path="/more/prc20tokendeployment" element={<PRC20TokenDeployment/>}/>
+
       {/* Add more routes here as needed */}
     </Routes>
   );

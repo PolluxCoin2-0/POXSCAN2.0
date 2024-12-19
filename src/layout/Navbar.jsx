@@ -99,15 +99,15 @@ const Navbar = () => {
               ]}
             />
             <NavLink
-              href="#"
+              href="/more/contractsdeployment"
               label="More"
               hasDropdown={true}
               dropdownItems={[
-                { href: "#", label: "Contracts Deployment" },
-                { href: "#", label: "Contracts Verification" },
-                { href: "#", label: "PRC20 Token Deployment" },
-                { href: "#", label: "Encoding Converter" },
-                { href: "#", label: "Broadcast Transaction" },
+                { href: "/more/contractsdeployment", label: "Contracts Deployment" },
+                { href: "/more/contractsverification", label: "Contracts Verification" },
+                { href: "/more/prc20tokendeployment", label: "PRC20 Token Deployment" },
+                { href: "/more/encodingconverter", label: "Encoding Converter" },
+                { href: "/more/broadcasttransaction", label: "Broadcast Transaction" },
               ]}
             />
           </div>
@@ -258,11 +258,11 @@ const Navbar = () => {
         label="More"
         hasDropdown={true}
         dropdownItems={[
-          { href: "#", label: "Contracts Deployment" },
-          { href: "#", label: "Contracts Verification" },
-          { href: "#", label: "PRC20 Token Deployment" },
-          { href: "#", label: "Encoding Converter" },
-          { href: "#", label: "Broadcast Transaction" },
+          { href: "/more/contractsdeployment", label: "Contracts Deployment" },
+          { href: "/more/contractsverification", label: "Contracts Verification" },
+          { href: "/more/prc20tokendeployment", label: "PRC20 Token Deployment" },
+          { href: "/more/encodingconverter", label: "Encoding Converter" },
+          { href: "/more/broadcasttransaction", label: "Broadcast Transaction" },
         ]}
         index={4}
         isDropdownOpen={openDropdownIndex ===4}
