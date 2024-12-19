@@ -16,7 +16,7 @@ import TokenDetails from "./components/Tokens/TokenDetails";
 import SuperRepresentatives from "./pages/Governance/SuperRepresentatives";
 import Votes from "./pages/Governance/Votes/Votes";
 import PoxStakingGovernance from "./pages/Governance/PoxStakingGovernance";
-import ParameterAndProposal from "./pages/Governance/ParameterAndProposal";
+import ParameterAndProposal from "./pages/Governance/ParameterAndProposal/ParameterAndProposal";
 
 const AppRoutes = () => {
   return (
