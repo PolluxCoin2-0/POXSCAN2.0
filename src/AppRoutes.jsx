@@ -22,6 +22,7 @@ import BroadcastTransaction from "./pages/More/BroadcastTransaction";
 import ContractsVerification from "./pages/More/ContractsVerification";
 import EncodingConverter from "./pages/More/EncodingConverter/EncodingConverter";
 import PRC20TokenDeployment from "./pages/More/PRC20TokenDeployment";
+import PageNotFound from "./pages/PageNotFound";
 
 const AppRoutes = () => {
   return (
@@ -49,8 +50,8 @@ const AppRoutes = () => {
       <Route path="/more/contractsverification" element={<ContractsVerification/>}/>
       <Route path="/more/encodingconverter" element={<EncodingConverter/>}/>
       <Route path="/more/prc20tokendeployment" element={<PRC20TokenDeployment/>}/>
-
-      {/* Add more routes here as needed */}
+      <Route path="*" element={<PageNotFound />} /> 
+    
     </Routes>
   );
 };
