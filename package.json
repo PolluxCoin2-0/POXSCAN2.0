@@ -11,10 +11,11 @@
   },
   "dependencies": {
     "@amcharts/amcharts5": "^5.10.8",
+    "@amcharts/amcharts5-geodata": "^5.1.4",
     "@heroicons/react": "^2.2.0",
+    "polylabel": "^2.0.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-globe.gl": "^2.28.0",
     "react-router-dom": "^7.0.1",
     "react-toastify": "^10.0.6"
   },

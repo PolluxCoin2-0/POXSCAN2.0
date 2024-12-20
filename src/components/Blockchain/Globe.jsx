@@ -1,86 +1,139 @@
-import { useEffect, useRef, useState } from "react";
-import Globe from "react-globe.gl";
+import React, { useLayoutEffect, useRef } from "react";
+import * as am5 from "@amcharts/amcharts5";
+import * as am5map from "@amcharts/amcharts5/map";
+import am5geodata_worldLow from "@amcharts/amcharts5-geodata/worldLow";
+import am5themes_Animated from "@amcharts/amcharts5/themes/Animated";
 
-export default function GlobeComponent() {
-  const [countries, setCountries] = useState({ features: [] });
-  const [line, setLine] = useState({ flights: [] });
-  const [lineHistory, setLineHistory] = useState({ airports: [] });
-  const [dimensions, setDimensions] = useState({
-    width: window.innerWidth,
-    height: window.innerHeight,
-  });
+const Globe = () => {
+  const chartRef = useRef(null);
 
-  // Fetch data
-  useEffect(() => {
-    fetch("../../../public/data/custom.geojson")
-      .then((res) => res.json())
-      .then(setCountries);
-    fetch("../../../public/data/line.json")
-      .then((res) => res.json())
-      .then(setLine);
-    fetch("../../../public/data/lineHistory.json")
-      .then((res) => res.json())
-      .then(setLineHistory);
-  }, []);
+  useLayoutEffect(() => {
+    // Create root and set themes
+    const root = am5.Root.new(chartRef.current);
+    root.setThemes([am5themes_Animated.new(root)]);
 
-  const globeRef = useRef();
+    // Create the map chart
+    const chart = root.container.children.push(
+      am5map.MapChart.new(root, {
+        panX: "rotateX",
+        panY: "translateY",
+        projection: am5map.geoMercator(),
+      })
+    );
 
-  useEffect(() => {
-    const globe = globeRef.current;
+    // Add zoom control
+    const zoomControl = chart.set("zoomControl", am5map.ZoomControl.new(root, {}));
+    zoomControl.homeButton.set("visible", true);
 
-    // Disable zoom and configure controls
-    const controls = globe.controls();
-    controls.autoRotate = true; // Auto-rotate globe
-    controls.autoRotateSpeed = -0.8;
-    controls.enableRotate = true; // Allow globe rotation
+    // Add main polygon series
+    const polygonSeries = chart.series.push(
+      am5map.MapPolygonSeries.new(root, {
+        geoJSON: am5geodata_worldLow,
+        exclude: ["AQ"],
+      })
+    );
 
-    // Resize listener for responsiveness
-    const handleResize = () => {
-      setDimensions({
-        width: window.innerWidth,
-        height: window.innerHeight,
+    polygonSeries.mapPolygons.template.setAll({
+      fill: am5.color(0xdadada),
+    });
+
+    // Add clustered point series
+    const pointSeries = chart.series.push(am5map.ClusteredPointSeries.new(root, {}));
+
+    // Configure cluster bullets
+    pointSeries.set("clusteredBullet", function (root) {
+      const container = am5.Container.new(root, {
+        cursorOverStyle: "pointer",
       });
-    };
 
-    window.addEventListener("resize", handleResize);
+      container.children.push(
+        am5.Circle.new(root, {
+          radius: 8,
+          tooltipY: 0,
+          fill: am5.color(0xff8c00),
+        })
+      );
+
+      container.children.push(
+        am5.Circle.new(root, {
+          radius: 12,
+          fillOpacity: 0.3,
+          tooltipY: 0,
+          fill: am5.color(0xff8c00),
+        })
+      );
+
+      container.children.push(
+        am5.Circle.new(root, {
+          radius: 16,
+          fillOpacity: 0.3,
+          tooltipY: 0,
+          fill: am5.color(0xff8c00),
+        })
+      );
+
+      const label = container.children.push(
+        am5.Label.new(root, {
+          centerX: am5.p50,
+          centerY: am5.p50,
+          fill: am5.color(0xffffff),
+          populateText: true,
+          fontSize: "8",
+          text: "{value}",
+        })
+      );
+
+      container.events.on("click", function (e) {
+        pointSeries.zoomToCluster(e.target.dataItem);
+      });
+
+      return am5.Bullet.new(root, {
+        sprite: container,
+      });
+    });
+
+    // Configure regular bullets
+    pointSeries.bullets.push(() => {
+      return am5.Bullet.new(root, {
+        sprite: am5.Circle.new(root, {
+          radius: 6,
+          tooltipY: 0,
+          fill: am5.color(0xff8c00),
+          tooltipText: "{title}",
+        }),
+      });
+    });
+
+    // Set data
+    const cities = [
+      { title: "Vienna", latitude: 48.2092, longitude: 16.3728 },
+      { title: "Minsk", latitude: 53.9678, longitude: 27.5766 },
+      { title: "Brussels", latitude: 50.8371, longitude: 4.3676 },
+      { title: "Sarajevo", latitude: 43.8608, longitude: 18.4214 },
+      { title: "Sofia", latitude: 42.7105, longitude: 23.3238 },
+      { title: "Zagreb", latitude: 45.815, longitude: 15.9785 },
+      { title: "Pristina", latitude: 42.666667, longitude: 21.166667 },
+      { title: "Prague", latitude: 50.0878, longitude: 14.4205 },
+      { title: "Copenhagen", latitude: 55.6763, longitude: 12.5681 },
+      // Add more cities as needed
+    ];
+
+    pointSeries.data.setAll(
+      cities.map((city) => ({
+        geometry: { type: "Point", coordinates: [city.longitude, city.latitude] },
+        title: city.title,
+      }))
+    );
+
+    // Animate the map
+    chart.appear(1000, 100);
+
     return () => {
-      window.removeEventListener("resize", handleResize);
+      root.dispose();
     };
   }, []);
 
-  return (
-    <Globe
-      ref={globeRef}
-      waitForGlobeReady={true}
-      width={dimensions.width} // Dynamic width
-      height={dimensions.height} // Dynamic height
-      backgroundColor="rgba(0, 0, 0, 0)"
-      rendererConfig={{ alpha: true }}
-      animateIn={true}
-      enableGlobeGlow={true}
-      globeGlowColor="#3C763D" // Green glow
-      globeGlowRadiusScale={0.1} // Reduced glow radius to prevent padding
-      showAtmosphere={true}
-      atmosphereColor="#00FF00" // Green atmosphere
-      atmosphereAltitude={0.1}
-      hexPolygonsData={countries.features}
-      hexPolygonResolution={3}
-      hexPolygonMargin={0.7}
-      hexPolygonColor={() => "rgba(0, 255, 0, 0.6)"} // Green hexagons
-      arcsData={line.flights}
-      arcColor={() => "#00FF00"} // Green arcs
-      arcAltitude={0.2}
-      arcDashGap={1}
-      arcDashAnimateTime={1000}
-      labelsData={lineHistory.airports}
-      labelColor={() => "#00FF00"} // Green labels
-      labelDotRadius={0.5} // Larger dots for labels
-      labelText={(e) => e.city} // Dynamic text
-      pointsData={lineHistory.airports}
-      pointColor={() => "#00FF00"} // Green points
-      pointRadius={0.3} // Adjust radius for better visibility
-      pointAltitude={0.07}
-    />
-  );
-}
-    
+  return <div ref={chartRef} style={{ width: "100%", height: "550px" }} />;
+};
+
+export default Globe;

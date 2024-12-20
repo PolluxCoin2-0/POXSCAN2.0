@@ -100,12 +100,12 @@ const ProposalTable = () => {
   
   return (
       <>     
-    <div className="relative bg-[#151515] border-[1px] border-[#434343] rounded-3xl px-6 py-5 my-3 shadow-lg">
-    {showModal&& 
-    <div className="absolute inset-0 flex items-center justify-center backdrop-blur-sm rounded-3xl z-50 m-1">
-      <ShowCommitteeProposalModal setShowModal={setShowModal}/>
-      </div>
-      }
+    <div className="bg-[#151515] border-[1px] border-[#434343] rounded-3xl px-6 py-5 my-3 shadow-lg">
+    {showModal && (
+  <div className="fixed inset-0 flex items-center justify-center bg-black backdrop-blur-sm bg-opacity-50 z-50">
+    <ShowCommitteeProposalModal setShowModal={setShowModal} />
+  </div>
+)}
       {/* Table Header */}
       <div className="grid grid-cols-7 gap-4 text-sm font-semibold text-[#A3A3A3] bg-[#222222] rounded-xl px-4 py-3">
         <p className="text-left">Number</p>
