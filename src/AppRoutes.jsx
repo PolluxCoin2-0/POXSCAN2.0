@@ -20,7 +20,7 @@ import ParameterAndProposal from "./pages/Governance/ParameterAndProposal/Parame
 import ContractsDeployment from "./pages/More/ContractsDeployment";
 import BroadcastTransaction from "./pages/More/BroadcastTransaction";
 import ContractsVerification from "./pages/More/ContractsVerification";
-import EncodingConverter from "./pages/More/EncodingConverter";
+import EncodingConverter from "./pages/More/EncodingConverter/EncodingConverter";
 import PRC20TokenDeployment from "./pages/More/PRC20TokenDeployment";
 
 const AppRoutes = () => {
